@@ -26,6 +26,12 @@ class GroupController {
         updateGroups()
     }
     
+    func shufflePeople() {
+        let shuffled = masterPersonList.shuffled()
+        masterPersonList = shuffled
+    }
+    
+    
     func deletePerson(name: String) {
         let person = name
         guard let index = masterPersonList.firstIndex(of: person) else { return }
