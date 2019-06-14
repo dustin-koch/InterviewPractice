@@ -8,20 +8,24 @@
 
 /* Begin PBXBuildFile section */
 		CAC6802C22B3EC16003CE072 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC6802B22B3EC16003CE072 /* AppDelegate.swift */; };
-		CAC6802E22B3EC16003CE072 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC6802D22B3EC16003CE072 /* ViewController.swift */; };
 		CAC6803122B3EC16003CE072 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CAC6802F22B3EC16003CE072 /* Main.storyboard */; };
 		CAC6803322B3EC17003CE072 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CAC6803222B3EC17003CE072 /* Assets.xcassets */; };
 		CAC6803622B3EC17003CE072 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CAC6803422B3EC17003CE072 /* LaunchScreen.storyboard */; };
+		CAC6803F22B3EEAF003CE072 /* GroupListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC6803E22B3EEAF003CE072 /* GroupListTableViewController.swift */; };
+		CAC6804222B3EFA4003CE072 /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC6804122B3EFA4003CE072 /* Group.swift */; };
+		CAC6804522B3EFB9003CE072 /* GroupController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC6804422B3EFB9003CE072 /* GroupController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		CAC6802822B3EC16003CE072 /* KobayashiMaru.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KobayashiMaru.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CAC6802B22B3EC16003CE072 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		CAC6802D22B3EC16003CE072 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		CAC6803022B3EC16003CE072 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CAC6803222B3EC17003CE072 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CAC6803522B3EC17003CE072 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CAC6803722B3EC17003CE072 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CAC6803E22B3EEAF003CE072 /* GroupListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupListTableViewController.swift; sourceTree = "<group>"; };
+		CAC6804122B3EFA4003CE072 /* Group.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
+		CAC6804422B3EFB9003CE072 /* GroupController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +58,48 @@
 		CAC6802A22B3EC16003CE072 /* KobayashiMaru */ = {
 			isa = PBXGroup;
 			children = (
-				CAC6802B22B3EC16003CE072 /* AppDelegate.swift */,
-				CAC6802D22B3EC16003CE072 /* ViewController.swift */,
 				CAC6802F22B3EC16003CE072 /* Main.storyboard */,
+				CAC6803D22B3EC24003CE072 /* Resources */,
+				CAC6804022B3EEB2003CE072 /* View Controllers */,
+				CAC6804322B3EFA8003CE072 /* Models */,
+				CAC6804622B3EFBD003CE072 /* Model Controllers */,
+			);
+			path = KobayashiMaru;
+			sourceTree = "<group>";
+		};
+		CAC6803D22B3EC24003CE072 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				CAC6802B22B3EC16003CE072 /* AppDelegate.swift */,
 				CAC6803222B3EC17003CE072 /* Assets.xcassets */,
 				CAC6803422B3EC17003CE072 /* LaunchScreen.storyboard */,
 				CAC6803722B3EC17003CE072 /* Info.plist */,
 			);
-			path = KobayashiMaru;
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		CAC6804022B3EEB2003CE072 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				CAC6803E22B3EEAF003CE072 /* GroupListTableViewController.swift */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		CAC6804322B3EFA8003CE072 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				CAC6804122B3EFA4003CE072 /* Group.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		CAC6804622B3EFBD003CE072 /* Model Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				CAC6804422B3EFB9003CE072 /* GroupController.swift */,
+			);
+			path = "Model Controllers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -135,8 +173,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CAC6802E22B3EC16003CE072 /* ViewController.swift in Sources */,
+				CAC6804222B3EFA4003CE072 /* Group.swift in Sources */,
+				CAC6804522B3EFB9003CE072 /* GroupController.swift in Sources */,
 				CAC6802C22B3EC16003CE072 /* AppDelegate.swift in Sources */,
+				CAC6803F22B3EEAF003CE072 /* GroupListTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -284,7 +324,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = D445CT62ZR;
-				INFOPLIST_FILE = KobayashiMaru/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/KobayashiMaru/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -302,7 +342,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = D445CT62ZR;
-				INFOPLIST_FILE = KobayashiMaru/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/KobayashiMaru/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
