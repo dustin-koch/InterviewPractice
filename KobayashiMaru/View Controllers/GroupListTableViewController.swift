@@ -52,9 +52,11 @@ class GroupListTableViewController: UITableViewController {
     // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
+            let person = GroupController.sharedInstance.groups[indexPath.section][indexPath.row]
+            GroupController.sharedInstance.deletePerson(name: person)
+            updateView()
+            // Delete the row from the data source (throwing error?! so reloaded table view instead)
+//            tableView.deleteRows(at: [indexPath], with: .fade)
         }
     }
     
