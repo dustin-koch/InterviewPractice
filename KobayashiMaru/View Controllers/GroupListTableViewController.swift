@@ -14,6 +14,11 @@ class GroupListTableViewController: UITableViewController {
     //MARK: - Lifecycle methods
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+            self.updateView()
     }
 
     //MARK: - Actions
@@ -63,6 +68,7 @@ class GroupListTableViewController: UITableViewController {
     //MARK: - Helper functions
     func updateView() {
         DispatchQueue.main.async {
+            GroupController.sharedInstance.updateGroups()
             self.tableView.reloadData()
         }
     }

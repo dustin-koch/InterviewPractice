@@ -15,7 +15,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        guard let people = GroupController.sharedInstance.loadPeople() else { return false}
+        GroupController.sharedInstance.masterPersonList = people
         return true
     }
 

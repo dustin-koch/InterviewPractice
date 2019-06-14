@@ -24,11 +24,13 @@ class GroupController {
         let person = name
         masterPersonList.append(person)
         updateGroups()
+        save(people: masterPersonList)
     }
     
     func shufflePeople() {
         let shuffled = masterPersonList.shuffled()
         masterPersonList = shuffled
+        save(people: masterPersonList)
     }
     
     
@@ -37,6 +39,7 @@ class GroupController {
         guard let index = masterPersonList.firstIndex(of: person) else { return }
         masterPersonList.remove(at: index)
         updateGroups()
+        save(people: masterPersonList)
     }
     
     func updateGroups() {
@@ -63,4 +66,36 @@ class GroupController {
 
 }//END OF CLASS
 
-//ADD persistence functions
+//MARK: - Persistence helper functions
+extension GroupController {
+    
+    func fileURL() -> URL {
+        let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+        let documentDirectory = paths[0]
+        let fileName = "PeopleList.json"
+        let fullURL = documentDirectory.appendingPathComponent(fileName)
+        return fullURL
+    }
+    
+    func save(people: [String]){
+        let jsonEncoder = JSONEncoder()
+        do {
+            let data = try jsonEncoder.encode(people)
+            try data.write(to: fileURL())
+        }catch let error {
+            print(error.localizedDescription)
+        }
+    }
+    
+    func loadPeople() -> [String]?{
+        let jsonDecoder = JSONDecoder()
+        do{
+            let data = try Data(contentsOf: fileURL())
+            let people = try jsonDecoder.decode([String].self, from: data)
+            return people
+        } catch let error {
+            print(error.localizedDescription)
+        }
+        return nil
+    }
+}//END OF EXTENSION
